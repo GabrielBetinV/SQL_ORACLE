@@ -1,0 +1,29 @@
+-- funcion abs, devuelve el valor absoluto
+
+select abs(-10) from dual;
+
+-- funcion ceil, redondea hacia arriba
+select ceil(15.50) from dual;
+
+-- funcion floor,  redondea hacia abajo
+select floor(13.30) from dual;
+
+--- funcion, mod, devuelve el residuo
+select mod(10,3) from dual;
+
+-- funcion round, redonde los decimales a partir de una ubicacion
+select round(123.456,2) from dual;
+
+-- funcion sign, devuelve la naturalez
+select sign(-100) from dual;
+
+-- funcion trunc,  corta cifras de decimales sinredondear
+
+select trunc(1234.1234,2) from dual;
+
+-- funcion sqrt, raiz cudrada
+select sqrt(9) from dual;
+
+-- funcion power, potencia 2*2*2
+
+select power(2,3) from dual;

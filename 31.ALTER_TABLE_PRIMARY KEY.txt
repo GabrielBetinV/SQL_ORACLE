@@ -1,0 +1,14 @@
+
+-- Agregar un campo como primaria
+alter table articulos
+add constraint ARTICULOS_PK
+primary key (id_articulo);
+
+-- ELIMINAR UNA LLAVE PRIMARIA
+alter table articulos
+drop constraint ARTICULOS_PK; 
+
+-- Consultar las llaves primarias
+select * from user_cons_columns where constraint_name = 'ARTICULOS_PK';
+
+select * from all_objects where object_name = 'ARTICULOS_PK' ;

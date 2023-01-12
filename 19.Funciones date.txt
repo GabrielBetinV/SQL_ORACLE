@@ -1,0 +1,33 @@
+-- funcion add_months, agrega meses
+    -- agregar 5 meses
+    select add_months(to_date('2022/12/31', 'yyyy/mm/dd'),5) from dual;
+    
+-- funcion last_day, devuelve el ultimo dia del mes
+
+select last_day(to_date('2022/12/10', 'yyyy/mm/dd')) from dual;
+
+
+-- funcion months_between , rango de meses
+
+select months_between(to_date('2022/12/31','yyyy/mm/dd'),to_date('2023/12/31','yyyy/mm/dd')) as rango_meses from dual;
+
+-- funcion next_day, devuelve la fecha del primer dia de la semana especiicando la fecha y el dia de la semana
+select next_day(to_date('2022/12/31','yyyy/mm/dd'),'LUNES') from dual;
+
+-- funcion current_date, devuelve la fecha calendario 
+select current_date from dual;
+
+-- funcion sysdate, devuelve la fe3cha que tiene el servidor de base de datos
+select sysdate from dual;
+
+-- funcion current_timestamp, trae fecha y hora correspondiente a la configuracion regional
+
+select current_timestamp from dual;
+
+
+-- funcion systimestamp, trae fecha y hora correspondiente a la configuracion regional pero del servidor d base de atos
+
+select systimestamp from dual;
+
+-- funcion to_char, convierte la fecha en  char
+select to_char('2022/10/12') from dual;

@@ -1,0 +1,14 @@
+Elimina los registros duplicados
+
+
+select * from  clientes;
+
+-- Muestra  las provincias de la tabla y elimina los duplicados
+select distinct provincia from clientes;
+
+-- cuenta las 3 provincias que mostro la consulta anterior
+select   count(distinct provincia) as cantidad from clientes;
+
+-- Muestra  las ciudades de una provincia
+select distinct ciudad from clientes
+where provincia = 'Cordoba';

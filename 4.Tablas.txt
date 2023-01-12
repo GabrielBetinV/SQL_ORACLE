@@ -1,0 +1,22 @@
+-> Objeto que contiente campos y filas
+
+     -- Muestra todas las tablas del sistema
+     SELECT * FROM all_tables;
+     
+     
+     -- Crear una tabla
+     CREATE TABLE usuarios(
+     	id_usuario INT,
+     	nombre_usuario CHAR(10),
+     	fecha_nacimiento DATE,
+     	telefono_usuario CHAR(8),
+     	salario_usuario number(6,2)
+     );
+     	
+
+   	SELECT  * FROM usuarios;
+
+
+
+ 	-- Esta funcion muestra como esta estructurada la               tabla
+     	describe usuarios;

@@ -1,0 +1,19 @@
+
+-- Almacenamos la consulta en una vista
+create or replace view v_promovidos as
+select * from empleados
+where sueldo like '5%'
+or seccion = 'Secretaria';
+
+-- consultamos la vista y devuelve la consulta guardada
+select * from v_promovidos;
+
+-- Creamos una vista que calcule el aumento de un empleado
+create or replace view Aumentos as
+select nombre, sueldo + (sueldo*0.10) as Nuevos_sueldos
+from empleados;
+
+select *from Aumentos;
+
+-- Borrar vistas
+drop view Alumnos;

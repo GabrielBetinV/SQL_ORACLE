@@ -1,0 +1,46 @@
+
+-- Especifica los valores que acepta un campo 
+
+select * from libros;
+
+-- Agregamos una restriccion al momento de grabar un precio
+alter table libros
+add constraint ck_libros_precio
+check (precio > 0 and precio < 1000)
+
+--  NO guarda porque el precio es mayor de 1000
+insert into libros values(3,'El Alquimista','Paulo Coehlo',2000);
+
+
+
+
+-- Tambien sirve para controlar valores de un campo para un rango especifico
+-- EJEMPLO
+
+create table dias_semana(
+dia int not null,
+nombre varchar(20)
+);
+
+
+-- Agregamos  restriccion
+alter table dias_semana
+add constraint ck_nombre_dia
+check (nombre in ('lunes','miercoles','viernes'));
+
+insert into dias_semana values(1,'lunes');
+
+-- Este insert no se guarda
+insert into dias_semana values(2,'martes');
+
+select * from dias_semana;
+
+
+-- Tambien sirve para controlar valores null
+
+alter table dias_semana
+add constraint ck_nombre_not_null
+check (nombre is not null);
+
+-- No se guarda por la restriccion de valores null
+insert into dias_semana values(4,null);

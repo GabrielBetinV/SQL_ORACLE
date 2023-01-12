@@ -1,0 +1,25 @@
+Valores por defecto
+
+--Eliminamos la tabla libro
+
+select * from libros;
+
+drop table libros;
+
+create table libros (
+titulo varchar2(40) not null,
+autor varchar2(30) default 'Desconocido',
+editorial varchar2(40) not null,
+precio  number(19,2),
+cantidad number(3) default 0
+);
+
+select * from libros;
+
+insert into libros values ('El quijote', 'Miguel cervantes', 'La casa del libro', 100000,100);
+
+insert into libros values ('Guerra y paz', default, 'Mensajero ruso', 80000,100);
+
+insert into libros values ('Cien años de soledad', 'gabriel garcia', 'Sudamericana', 85500.50,default);
+
+select * from libros;

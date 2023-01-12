@@ -1,0 +1,5 @@
+select * from articulos;
+
+update articulos set precio = 1000 where codigo = 1;
+
+select * from articulos;

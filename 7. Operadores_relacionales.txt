@@ -1,0 +1,23 @@
+* operador =
+
+select * from articulos where nombre = 'impresora';
+
+* Distinto != 
+
+select * from articulos where nombre != 'impresora';
+
+* Mayor o menor que <>
+
+select * from articulos where precio > 100;
+
+select * from articulos where precio < 100;
+
+
+* Mayor o igual >=
+
+
+select * from articulos where precio >= 100;
+
+* Menor o igual <=
+
+    select * from articulos where precio <= 100;

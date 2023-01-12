@@ -1,0 +1,22 @@
+
+-- Columnas calculadas
+select titulo, precio, cantidad from libros;
+
+-- Precio por la cantidad
+select titulo, precio, cantidad, precio*cantidad from libros; 
+
+-- 10% de descuento
+select titulo, precio,precio - (precio*0.1) from libros; 
+
+
+-- Actualizar precio calculando el proceso
+select titulo, precio, cantidad from libros;
+update libros set precio = precio-(precio*0.1);
+select titulo, precio, cantidad from libros;
+
+
+--Concatenar datos, unir registros
+
+select titulo || ' - ' || autor from libros;
+
+select titulo || ' $ ' || precio from libros;

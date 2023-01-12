@@ -1,0 +1,27 @@
+-- UNIQUE , impide que se dupliquen registros
+-- Se aplican a varios campos, siempre y cuando no sean llaves primaria
+
+drop table usuarios;
+create table usuarios(
+id_usuario int not null primary key,
+nombre_usuario varchar(30) null,
+clave_usuario varchar(20) null
+);
+
+select * from  usuarios;
+
+-- Agregamos UNIQUE a la table
+
+alter table usuarios
+add constraint UQ_nombre_usuario
+unique (nombre_usuario);
+
+insert into usuarios values(1,'gbetin','1234');
+
+-- Este no se guarda por la restriccion unica
+insert into usuarios values(2,'gbetin','1234');
+select * from usuarios;
+
+-- Eliminar el UNIQUE
+alter table usuarios
+drop constraint UQ_nombre_usuario

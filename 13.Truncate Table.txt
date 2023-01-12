@@ -1,0 +1,27 @@
+-- Vacia completamente la tabla, a diferencia de delete no se puede recuperar la info
+-- Delete guarda copia y truncate table NO
+
+-- Delete
+select * from articulos;
+
+delete from articulos;
+
+select * from articulos;
+
+-- Con esta iinstruccion se puede recuperar
+
+rollback;
+select * from articulos;
+
+
+-- truncate
+select * from articulos;
+
+truncate table articulos;
+
+select * from articulos;
+
+-- con la instruccion no se recupera
+rollback;
+
+select * from articulos;

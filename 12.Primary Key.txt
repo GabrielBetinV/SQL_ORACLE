@@ -1,0 +1,12 @@
+create table usuarios_nuevo(
+nombre varchar2(20) not null,
+clave varchar(10) not null,
+primary key(nombre)
+);
+    
+insert into usuarios_nuevo values ('Gabriel', 'Domayor 7')  
+
+insert into usuarios_nuevo values ('Stefany', 'Domayor 7')   
+
+-- No se guarda porque Gabriel ya existe
+insert into usuarios_nuevo values ('Gabriel', 'Domayor 7') 

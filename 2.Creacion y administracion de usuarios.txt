@@ -1,0 +1,44 @@
+1. Creacion de usuarios modo grafico
+
+Digitar el siguiente comando para que te permita crear el usuario
+
+alter session set "_ORACLE_SCRIPT"=true;  
+
+
+
+
+-Click en la base de datos
+-Seleccionar click derecho en la opcion => otros usuarios
+- Se despliega una ventana con las pestañas pra configurar el rol y privilegios del
+usuario
+
+seleccionamos administrar todo y le quitamos estas opciones
+
+SYSOPER y ADMINISTER RESOURCE MANAGER	
+
+2. Creacion de usuarios con el script
+
+alter session set "_ORACLE_SCRIPT"=true; 
+
+--CREACION DEL USUARIO
+create user con_tester  identified by Domayor7
+default tablespace SYSTEM
+temporary tablespace temp
+quota unlimited on SYSTEM;
+
+--PRIVILEGIOS PARA CREAR USUARIOS
+grant create session to con_tester; => Para iniciar sesion 
+grant create table to con_tester; => Para crear tablas
+grant create view to con_tester; => para crear vistas
+grant create procedure to con_tester; =>  para crear procedimientos 
+grant create sequence to con_tester;
+
+--PRIVILEGIOS PARA ADMINISTRAR TABLAS
+grant all on nombretabla to con_tester;
+
+--REVOCAR PRIVILEGIOS
+
+revoke all on nombretabla from con_tester;
+
+--Eliminar usuarios
+drop user usuario_prueba cascade;

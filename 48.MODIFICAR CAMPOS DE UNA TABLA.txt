@@ -1,0 +1,29 @@
+-- creamos una tabla con un campo de tipo 
+create table tipo_dato(
+ valor int null
+);
+
+-- insertar un valor
+insert into tipo_dato values(100);
+
+-- COnsultamos
+select * from tipo_dato;
+
+-- Si queremos  modificar el tipo de datos del campo para insertar varchar debemos hacer
+-- lo siguiente
+
+truncate table tipo_dato;
+
+alter table  tipo_dato
+modify valor varchar(20);
+
+
+-- insertamos registros
+
+insert into tipo_dato values('Hola');
+
+-- Este lo inserta como si ffuera un varchar
+
+insert into tipo_dato values(20000);
+
+select * from  tipo_dato;

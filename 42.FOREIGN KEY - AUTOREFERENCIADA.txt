@@ -1,0 +1,45 @@
+
+drop table clientes;
+
+create table clientes(
+codigo number(5),
+nombre varchar2(30),
+domicilio varchar2(30),
+ciudad varchar2(20),
+referenciadopor number(5),
+primary key(codigo)
+);
+
+ insert into clientes values (50,'Juan Perez','Sucre 123','Cordoba',null);
+ insert into clientes values(90,'Marta Juarez','Colon 345','Carlos Paz',null);
+ insert into clientes values(110,'Fabian Torres','San Martin 987','Cordoba',50);
+ insert into clientes values(125,'Susana Garcia','Colon 122','Carlos Paz',90);
+ insert into clientes values(140,'Ana Herrero','Colon 890','Carlos Paz',9);
+
+
+
+select * from clientes;
+
+--Crear la llave foranea autoreferenciada
+
+alter table clientes
+add constraint fk_referencia
+foreign key(referenciadopor)
+references clientes(codigo);
+
+-- No se puede crear la llave foranea porque hay un registro que no esta dentro de 
+-- los datos almacenados y que son llave primaria
+
+update clientes set referenciadopor = 90 where referenciadopor = 9;
+
+-- Ahora si crea la llave foranea referenciada
+alter table clientes
+add constraint fk_referencia
+foreign key(referenciadopor)
+references clientes(codigo);
+
+
+-- De esta manera no se podra eliminar los registros utilizando la llave primaria
+--si no la llave foranea
+
+delete from clientes where referenciadopor = 50;

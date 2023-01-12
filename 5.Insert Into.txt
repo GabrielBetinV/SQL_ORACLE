@@ -1,0 +1,14 @@
+ -- Crear una tabla para empleados
+     CREATE TABLE empleados(
+     	id_empleado INT not null,
+     	nombre_empleado varchar2(20),
+     	direccion_empleado varchar2(50),
+     	documento_empleado varchar2(10),
+     	salario_empleado number(6,2),
+        fecha_nacimiento_empleado date
+     );
+     	
+    select * from empleados;    
+    
+    
+    insert into empleados values (2,'Stefanu Coba', 'Calle 10 - 30','3107400211',3500000,to_date('27/09/1989', 'dd/mm/yyyy'));

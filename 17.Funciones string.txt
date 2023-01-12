@@ -1,0 +1,76 @@
+-- Funcion Char, consulta los caracteres alfanumerico del codigo ascii
+
+    -- Cual es el caracater
+    select chr(100) from dual;
+    
+    -- Cual es el  codigo ascii
+    select ascii('d') from dual;
+    
+    
+-- funcion concact, concatena  los textos
+
+select concat('Buenas ' , 'Tardes') from dual;
+
+-- funcion initcap, primera letra en mayusculas
+select initcap('buenas tardes') from dual;
+
+-- funcion lower, devuelve todo en minuscula
+
+select lower('BUENAS TARDES') from dual;
+
+-- funcion UPPER, devuelve todo en mayusculas
+
+select upper('buenas tades') from dual;
+
+-- funcion lpad, agrega caracteres al lado izquierdo
+
+  -- completa la palabra oracle rellenando con abc hasta llegar a 11 caracteres
+
+select lpad('oracle',11,'abc') from dual;
+
+
+-- funcion rpad, agrega caracteres al lado derecho
+
+  -- completa la palabra oracle rellenando con abc hasta llegar a 11 caracteres
+
+select rpad('oracle',9,'abc') from dual;
+
+
+-- funcion ltrim, Borra los caracteeres del lado izquierdo
+
+select ltrim('curso de oracle', 'cur') from dual; 
+
+-- funcion rtrim, Borra los caracteres del lado derecho
+
+select rtrim('curso de oracle', 'cle') from dual; 
+
+-- funcion trim, elimin espacios en blanco de lado en lado
+
+select trim(' oracle ') from dual;
+
+-- funcion replace, remplaza los caracteres
+
+  --reemplaza la o porla a
+
+select replace('www.oracle.com','o','a') from dual;
+
+
+-- funcion substring, devuelve cierta cantidad de caracteres
+
+   -- devuelve www.oracle
+   select substr('www.oracle.com',1,10) from dual;
+   
+   -- Tambien se puede colocar numeros negativos, leera de derecha a izquierda (com)
+   select substr('www.oracle.com',-3) from dual;
+   
+-- funcion length, devuelve la cantidad de caracteres
+select length('www.oracle.com') as cantidad from dual;
+
+-- funcion instr, Busca una palabra en una frase y devuelve la posicion del caracter.
+
+select instr('curso de oracle sql', 'curso') from dual;
+
+-- funcion transalte, sustituye letras o calacteres
+  -- las letras se reemplazaran en el mismo orden
+
+select translate('Curso de oracle','aoe','xyz') from dual;

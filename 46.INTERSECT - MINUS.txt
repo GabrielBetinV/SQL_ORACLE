@@ -1,0 +1,13 @@
+Permite consultar datos entre varias tablas
+
+-- INTERSECT => Devuelve los registros duplicados
+
+select documento, nombre, domicilio from medicos
+intersect
+select documento, nombre,  domicilio from pacientes;
+
+-- MINUS => Devuelve los registros que no tienen coincidencias entre las tablas
+
+select documento, nombre, domicilio from medicos
+minus
+select documento, nombre,  domicilio from pacientes;

@@ -1,0 +1,7 @@
+Cantidad de registros que necesitamos en una consulta
+
+
+-- Los primeros 3 registros
+  select * from empleados
+  where rownum <4;
+  

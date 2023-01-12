@@ -1,0 +1,67 @@
+Funcionalidad para generar valores secuenciales y unicos, seran asignado
+a campos numericos
+
+Se utilizan generarmente para llaves primaria
+
+1. Se puede crear desde el explorador de objeto
+
+-- Iniciar nuestra secuencia
+select secuencia_libros.nextval from dual;
+
+
+
+EJEMPLO
+
+select secuencia_libros.nextval from dual;
+
+drop table libros;
+
+create table libros(
+idlibro int not null primary key,
+titulo varchar(40) not null,
+autori varchar(40) null,
+precio number(5,2)
+);
+
+select * from libros;
+
+-- Valor actual  dela secuenciacurval
+insert into libros values(secuencia_libros.currval,'Elquijote', 'Miguel cervante', 500.00);
+
+-- Valor siguiente
+insert into libros values(secuencia_libros.nextval,'Cien año de soledad', 'Gabriel Garcia', 600.00);
+
+
+
+
+2. Crear la secuencia con codigo
+
+truncate table libros;
+
+select * from libros;
+
+Eliminar secuencia
+
+drop sequence secuencia_libros;
+
+
+codigo para crear secuencia
+
+create sequence secuencialibros
+start with 1
+increment by 1
+maxvalue 9999
+minvalue 1
+cycle;
+
+select secuencialibros.nextval from dual;
+
+-- Valor actual  dela secuenciacurval
+insert into libros values(secuencialibros.currval,'Elquijote', 'Miguel cervante', 500.00);
+
+-- Valor siguiente
+insert into libros values(secuencialibros.nextval,'Cien año de soledad', 'Gabriel Garcia', 600.00);
+
+consultar todas las secuencias
+
+select * from all_sequences;

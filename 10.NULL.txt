@@ -1,0 +1,14 @@
+Valores nules, campos que no tienen registro algunos
+
+create table libro_nuevo(
+titulo varchar(30) not null,
+autor varchar(20) not null,
+editorial varchar(15) null,
+precio number(19,2)
+);
+
+insert into libro_nuevo values('El aleph', 'Borges', 'Emece', null);
+insert into libro_nuevo values('Alicia en el pais', 'Lewis Carrol', 'Campos',300.00);
+insert into libro_nuevo values('El Quijote', 'Miguel de cervantes', 'Casa del libro', 0);
+
+select * from libro_nuevo;

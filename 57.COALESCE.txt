@@ -1,0 +1,12 @@
+Excluye los valores null
+
+
+-- Devuelve 1 en vez del null
+select coalesce(null,1) as valor from dual;
+
+-- Aca si devuelve el null
+select coalesce(null,null,null) as valor from dual;
+
+-- Coalesce devuelve el primer valor no null (A)
+select coalesce(null,'A','B') as valor from dual;
+

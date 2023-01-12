@@ -1,0 +1,24 @@
+select * from libros;
+
+-- AGREGAR CAMPO
+alter table libros
+add cantidad int;
+
+-- agregar campo con un  valor por defecto
+alter table libros
+add (existencia int default 0 not null);
+
+-- AGREGAR VARIOS CAMPOS
+
+alter table libros
+add (vendidos int default 0 not null,
+     stock int default 0 not null);
+     
+-- ELIMINAR CAMPOS
+
+alter table libros
+drop column stock;
+
+-- ELIMINAR VARIOS CAMPOS
+alter table libros
+drop (vendidos, existencia);
